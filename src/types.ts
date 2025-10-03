@@ -152,6 +152,7 @@ export interface HashAlgorithm {
   getAlgorithmName(): HashAlgorithmType;
 
   getHash(xml: string): string;
+  getHash(xml: string, callback?: ErrorFirstCallback<string>): void;
 }
 
 /** Extend this to create a new SignatureAlgorithm */
