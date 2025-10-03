@@ -985,7 +985,7 @@ export class SignedXml {
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         const signatureDoc = nodeXml.documentElement.firstChild!;
 
-        const referenceNode = xpath.select1(location.reference, doc);
+        const referenceNode: Node = xpath.select1(location.reference!, doc) as Node;
 
         if (!isDomNode.isNodeLike(referenceNode)) {
           const err2 = new Error(
