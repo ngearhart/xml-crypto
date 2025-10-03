@@ -1171,6 +1171,7 @@ export class SignedXml {
                   `<${prefix}DigestMethod Algorithm="${digestAlgorithm.getAlgorithmName()}" />` +
                   `<${prefix}DigestValue>${hash}</${prefix}DigestValue>` +
                   `</${prefix}Reference>`;
+                resolveInt(res);
               })
             })
           })).then(arrayOfRes => resolve(Array.from(arrayOfRes).join()))
